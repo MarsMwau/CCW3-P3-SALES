@@ -21,13 +21,13 @@ class ApplicationController < Sinatra::Base
         user.to_json(include: :reviews)
     end
 
-    post '/review' do
-        review = Review.create(
+    post '/reviews' do
+        reviews = Review.create(
             star_rating: params[:star_rating],
             comments: params[:comments],
             user_id: params[:user_id],
             product_id: params[:product_id])
-            review.to_json
+            reviews.to_json
     end
 
 end
